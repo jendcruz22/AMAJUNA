@@ -59,7 +59,7 @@
                         <a class="nav-link" href="upload.php">Sell now</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact us</a>
+                        <a class="nav-link" href="contact.php">Contact us</a>
                     </li>
                     <li class="nav-item">
                       <?php  if (isset($_SESSION['username'])) : ?>
@@ -82,7 +82,7 @@
                         <center>
                             Amajuna, is a second hand product selling system which allows vendors or common people to sell and buy second hand products at reasonable prices. The simplicity and effectiveness of this systems provides great advantages to organizations. These systems allow easy management of second hand products.
                             </br><br><font size="5" color="black">Tourista, a one place travel guide for all your dream destinations.<br>Travel to every end world and live life to the fullest!</br></br></font>
-                            <a href="home.html"><font color="black" size="4">Back to the main page</font></a>
+                            <a href="index.php"><font color="black" size="4">Back to the main page</font></a>
                         </center>
                 </th>
             </tr>
