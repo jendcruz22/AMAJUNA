@@ -85,11 +85,15 @@
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="jen.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <img class="card-img-top" src="jen.jpg.jpg" alt="Card image cap">
+    <div class="card-body"><center>
+      <h5 class="card-title"><b>Jenny Dcruz</b></h5>
+      <p class="card-text">Hello, I am the co founder of Amajuna. This is a web application made for my Sem 5 WDL/DBMS project. My details are mentioned down below.</p>
+      </center>
+      <p class="card-text"><small class="text-muted">TE CMPN A</small></p>
+      <p class="card-text"><small class="text-muted">Roll no: 20</small></p>
+      <p class="card-text"><small class="text-muted">PID: 172047</small></p>
+
     </div>
   </div>
 </div>
