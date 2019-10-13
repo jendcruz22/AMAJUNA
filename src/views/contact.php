@@ -3,12 +3,12 @@
 
   if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: src/views/login.php');
+    header('location: login.php');
   }
   if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: src/views/login.php');
+    header('location: login.php');
   }
 ?>
 <!DOCTYPE html>
@@ -24,10 +24,10 @@
     <title>About</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="../styles/shop-homepage.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
 </head>
@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="About.php">About us</a>
@@ -63,7 +63,7 @@
                     </li>
                     <li class="nav-item">
                       <?php  if (isset($_SESSION['username'])) : ?>
-                        <p> <a class="nav-link" href="index.php?logout='1'" style="color: #777">Logout</a> </p>
+                        <p> <a class="nav-link" href="../../index.php?logout='1'" style="color: #777">Logout</a> </p>
                       <?php endif ?>
                     </li>
                 </ul>
@@ -85,7 +85,7 @@
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="jen.jpg.jpg" alt="Card image cap">
+    <img class="card-img-top" src="../../public/images/jen.jpg" alt="Card image cap">
     <div class="card-body"><center>
       <h5 class="card-title"><b>Jenny Dcruz</b></h5>
       <p class="card-text">Hello, I am the co founder of Amajuna. This is a web application made for my Sem 5 WDL/DBMS project. My details are mentioned down below.</p>

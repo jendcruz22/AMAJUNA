@@ -3,12 +3,12 @@
 
   if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: src/views/login.php');
+    header('location: login.php');
   }
   if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: src/views/login.php');
+    header('location: login.php');
   }
 ?>
 
@@ -25,10 +25,10 @@
     <title>Amajuna</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="src/styles/shop-homepage.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
 </head>

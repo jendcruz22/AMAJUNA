@@ -26,7 +26,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="src/styles/shop-homepage.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
 </head>
@@ -50,16 +50,16 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About.php">About us</a>
+                        <a class="nav-link" href="src/views/About.php">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="upload.php">Sell now</a>
+                        <a class="nav-link" href="src/views/upload.php">Sell now</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact us</a>
+                        <a class="nav-link" href="src/views/contact.php">Contact us</a>
                     </li>
                     <li class="nav-item">
                       <?php  if (isset($_SESSION['username'])) : ?>
@@ -97,13 +97,13 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="jeepcomp.jpg" alt="First slide">
+                            <img class="d-block img-fluid" src="public/images/jeepcomp.jpg" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="Iphone.jpg" alt="Second slide">
+                            <img class="d-block img-fluid" src="public/images/Iphone.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="ktmduke.jpg" alt="Third slide">
+                            <img class="d-block img-fluid" src="public/images/ktmduke.jpg" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -120,10 +120,10 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="onep7.jpg" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="public/images/onep7.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="prodoneplus.html">One Plus 7 Pro</a>
+                                    <a href="src/views/prodoneplus.html">One Plus 7 Pro</a>
                                 </h4>
                                 <h5>Rs 48,999</h5>
                                 <p class="card-text">
@@ -138,7 +138,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="rep.jpg" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="public/images/rep.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">Royal Enfield Bullet 500</a>
@@ -154,7 +154,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="jag.jpg" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="public/images/jag.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">Jaguar I-PACE</a>
@@ -170,7 +170,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="iphoneprod.jpg" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="public/images/iphoneprod.jpg" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">Iphone 6</a>

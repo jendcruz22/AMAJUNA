@@ -3,12 +3,12 @@
 
   if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: src/views/login.php');
+    header('location: login.php');
   }
   if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: src/views/login.php');
+    header('location: login.php');
   }
 ?>
 <!DOCTYPE html>
@@ -24,10 +24,10 @@
     <title>Amajuna</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/formstyles.css" rel="stylesheet">
+    <link href="../styles/formstyles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
 </head>
@@ -62,7 +62,7 @@
                     </li>
                     <li class="nav-item">
                       <?php  if (isset($_SESSION['username'])) : ?>
-                        <p> <a class="nav-link" href="index.php?logout='1'" style="color: #777">Logout</a> </p>
+                        <p> <a class="nav-link" href="../../index.php?logout='1'" style="color: #777">Logout</a> </p>
                       <?php endif ?>
                     </li>
                 </ul>
