@@ -4,13 +4,16 @@
 }
 body {
   font-size: 120%;
-  background: #F8F8FF;
-}
+  background-image: url(../../public/images/regbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 
 .header {
   width: 30%;
   margin: 50px auto 0px;
   color: white;
+  opacity: 1;
   background: #142534;
   text-align: center;
   border: 1px solid #B0C4DE;
@@ -22,6 +25,7 @@ form, .content {
   width: 30%;
   margin: 0px auto;
   padding: 20px;
+  opacity: 0.85;
   border: 1px solid #B0C4DE;
   background: white;
   border-radius: 0px 0px 10px 10px;
@@ -46,6 +50,7 @@ form, .content {
   padding: 10px;
   font-size: 15px;
   color: white;
+  opacity: 1;
   background: #142534;
   border: none;
   border-radius: 5px;

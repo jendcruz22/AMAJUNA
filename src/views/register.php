@@ -3,7 +3,8 @@
 <html>
 <head>
   <title>Amajuna</title>
-  <link rel="stylesheet" type="text/css" href="../../src/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css">
+
 </head>
 <body>
   <div class="header">

@@ -1,0 +1,25 @@
+form {
+    padding-top: 56px;
+    background-repeat: no-repeat fixed;
+    background-size: 100%;
+    background-color: pink;
+}
+
+a {
+    font-family: 'Arial', cursive;
+}
+
+div {
+    font-family: 'Arial', cursive;
+}
+
+h1 {
+    font-family: 'Arial', cursive;
+    font-size: "5";
+    font-color: black
+}
+
+th {
+    font-family: 'Arial', cursive;
+    background-color: lightsteelblue
+}

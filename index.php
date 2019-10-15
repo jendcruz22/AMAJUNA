@@ -56,7 +56,7 @@
                         <a class="nav-link" href="#">My Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="src/views/upload.php">Sell now</a>
+                        <a class="nav-link" href="src/views/upload.php">Sell </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="src/views/contact.php">Contact us</a>
