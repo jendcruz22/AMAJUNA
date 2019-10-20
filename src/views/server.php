@@ -113,6 +113,15 @@ if (isset($_POST['add_product'])) {
   $user_id = $row['user_id'];
   $date_of_posting = date("Y-m-d H:i:s"); 
 
+
+  if (!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) 
+  {
+      
+  }else{
+    
+  }
+
+
   if (isset($_POST['ram']))
   {
     $ram = mysqli_real_escape_string($db, $_POST['ram']);
