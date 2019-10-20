@@ -1,6 +1,6 @@
-<?php 
+<?php
   session_start(); 
-
+  $db = mysqli_connect('localhost', 'root', '', 'amajuna');
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: src/views/login.php');
@@ -135,9 +135,6 @@
                                     OnePlus 7 Pro smartphone runs on Android v9.0 (Pie) operating system. The phone is powered by Octa core processor. It has 6 GB RAM and 128 GB internal storage. OnePlus 7 Pro smartphone has a Fluid AMOLED display.
                                 </p>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
                         </div>
                     </div>
 
@@ -150,9 +147,6 @@
                                 </h4>
                                 <h5>Rs 2,32,316.00</h5>
                                 <p class="card-text">The Bullet 500 is the same as the iconic Bullet 350, but with a bigger 499cc engine. The Bullet 500 is powered by a single-cylinder air-cooled 499cc mill producing 26.5bhp of power at 5,100rpm and 40.9Nm of torque at 3,800rpm.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                             </div>
                         </div>
                     </div>
@@ -167,9 +161,6 @@
                                 <h5>Rs 58.00 Lakh</h5>
                                 <p class="card-text">The Jaguar I-Pace has a WLTP-rated range of 292 miles (470 km) and an EPA-rated range of 234 miles (377 km). The car has a wade depth of 500 mm (20 in).</p>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
                         </div>
                     </div>
 
@@ -182,9 +173,6 @@
                                 </h4>
                                 <h5>Rs 27,000</h5>
                                 <p class="card-text">The iPhone 6 and 6 Plus include larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                             </div>
                         </div>
                     </div>
@@ -199,9 +187,6 @@
                                 <h5>$24.99</h5>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
                         </div>
                     </div>
 
@@ -214,9 +199,6 @@
                                 </h4>
                                 <h5>$24.99</h5>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                             </div>
                         </div>
                     </div>
