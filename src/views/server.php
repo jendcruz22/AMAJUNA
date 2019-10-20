@@ -113,22 +113,19 @@ if (isset($_POST['add_product'])) {
   $user_id = $row['user_id'];
   $date_of_posting = date("Y-m-d H:i:s"); 
 
-
-  if (!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) 
-  {
-      
+  if (isset($_POST['image'])){
+    $image_name = $_POST['image'];
   }else{
-    
+    $image_name = 'amajuna.png';
   }
-
 
   if (isset($_POST['ram']))
   {
     $ram = mysqli_real_escape_string($db, $_POST['ram']);
     $screen_size = mysqli_real_escape_string($db, $_POST['screen_size']);
     $brand = mysqli_real_escape_string($db, $_POST['brand']);
-    $query = "INSERT INTO products (description, date_of_posting, mrp, title, stock, user_id) 
-            VALUES('$description','$date_of_posting',$mrp,'$title',$stock,'$user_id');
+    $query = "INSERT INTO products (description, date_of_posting, mrp, title, stock, image_name, user_id) 
+            VALUES('$description','$date_of_posting',$mrp,'$title',$stock, '$image_name', $user_id);
             INSERT INTO mobiles(p_id, screen_size, ram, brand) VALUES (LAST_INSERT_ID(),'$screen_size','$ram','$brand')";
     if(mysqli_multi_query($db, $query)){
       header('location: ../../index.php');
@@ -137,8 +134,8 @@ if (isset($_POST['add_product'])) {
     $type_of_vehicle = mysqli_real_escape_string($db, $_POST['type_of_vehicle']);
     $seating_capacity = mysqli_real_escape_string($db, $_POST['seating_capacity']);
     $brand = mysqli_real_escape_string($db, $_POST['brand']);
-    $query = "INSERT INTO products (description, date_of_posting, mrp, title, stock, user_id) 
-            VALUES('$description','$date_of_posting',$mrp,'$title',$stock,'$user_id');
+    $query = "INSERT INTO products (description, date_of_posting, mrp, title, stock, image_name, user_id) 
+            VALUES('$description','$date_of_posting',$mrp,'$title',$stock, '$image_name',$user_id);
             INSERT INTO vehicles(p_id, type_of_vehicle, seating_capacity, brand) VALUES (LAST_INSERT_ID(),'$type_of_vehicle','$seating_capacity','$brand')";
     if(mysqli_multi_query($db, $query)){
       header('location: ../../index.php');

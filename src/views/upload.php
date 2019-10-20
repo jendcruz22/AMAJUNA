@@ -82,7 +82,7 @@
                             <div class="col-md-9 col-lg-8 mx-auto">
                                 <h3 class="login-heading mb-4">Upload product details here</h3>
                                 <form method="post" action="upload.php">
-                                    <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label>
+                                    <input type="file" name="image" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label>
                                     <br>
                                     <div class="form-label-group">
                                         <input name="title" type="text" id="prodName" class="form-control" placeholder="Product Name" required autofocus>
