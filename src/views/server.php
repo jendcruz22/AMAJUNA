@@ -99,7 +99,7 @@ if (isset($_POST['login_user'])) {
   }
 }
 
-// if (isset($_POST['login_user'])) {
+// if (isset($_POST['add_product'])) {
 
 
 // }

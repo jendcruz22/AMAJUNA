@@ -28,6 +28,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../styles/formstyles.css" rel="stylesheet">
+    <link href="../styles/upload_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
 </head>
@@ -36,7 +37,7 @@
 <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">AMAJUNA</a>
+            <a class="navbar-brand" href="../../index.php">AMAJUNA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -81,42 +82,43 @@
                             <div class="col-md-9 col-lg-8 mx-auto">
                                 <h3 class="login-heading mb-4" align="center">Upload product details here</h3>
                                 <form>
-                                    <form action="upload.php"> <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label></form>
+                                    <form method="post" action="upload.php">
+                                    <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label></form>
                                     </br>
                                     <div class="form-label-group">
-                                        <input type="text" id="prodName" class="form-control" placeholder="Product Name" required autofocus>
-                                        <label for="prodName">Product Name</label>
+                                        <input name="title" type="text" id="prodName" class="form-control" placeholder="Product Name" required autofocus>
+                                        <label for="prodName">Product Title<Title></Title></label>
                                     </div>
-
                                     <div class="form-label-group">
-                                        <input type="text" id="prod_desc" class="form-control" placeholder="Product Description" required autofocus>
-                                        <label for="prod_desc">Last Name</label>
+                                        <input name="description" type="text" id="prod_desc" class="form-control" placeholder="Product Description" required autofocus>
+                                        <label for="prod_desc">Product Description</label>
                                     </div>
-
-                                    <input class="radio" type="radio" name="prodtype" value="Mobile" ><label>Mobile</label></br>
-
-                                    <input class="radio" type="radio" name="prodtype" value="Vehicle"><label>Vehicle</label></br>
-
                                     <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                        <label for="inputEmail">Email address</label>
+                                        <input name="mrp" type="text" id="prod_desc" class="form-control" placeholder="Product Description" required autofocus>
+                                        <label for="prod_desc">Cost of the product</label>
                                     </div>
-
                                     <div class="form-label-group">
-                                        <input type="tel" id="inputPhone" class="form-control" placeholder="Phone Number" name="phone" pattern="[0-9]{2}-[0-9]{10}" required autofocus>
-                                        <label for="inputPhone">Phone Number</label>
+                                        <input name="stock" type="text" id="prod_desc" class="form-control" placeholder="Product Description" required autofocus>
+                                        <label for="prod_desc">Quantity in stock</label>
                                     </div>
-
                                     <div class="form-label-group">
-                                        <input type="text" id="Address" class="form-control" placeholder="Address" required autofocus>
-                                        <label for="seller_add">Address</label>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Category
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a id="category_mobiles" class="dropdown-item" href="#" onclick="add_mobile_input();">Mobiles</a>
+                                                <a id="category_vehicles" class="dropdown-item" href="#" onclick="add_vehicles_input();">Vehicles</a>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">Display address to buyers</label>
+                                    <div id="form_input1" class="form-label-group">
                                     </div>
-                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">SELL</button>
+                                    <div id="form_input2" class="form-label-group">
+                                    </div>
+                                    <div id="form_input3" class="form-label-group">
+                                    </div>
+                                    <button name="add_product" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">SELL</button>
                                     <div class="text-center">
                                         <a class="small" href="index.php">Go Back to home page</a>
                                     </div>
@@ -129,6 +131,14 @@
         </div>
     </div>
 </center>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../scripts/script.js"></script>
+
+
+
 </body>
 
 </html>
