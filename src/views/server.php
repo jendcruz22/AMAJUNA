@@ -52,10 +52,14 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password) 
-  			  VALUES('$username', '$email', '$password')";
+  	$query = "INSERT INTO users (username, email, password, type, contact_number, location) 
+  			  VALUES('$username', '$email', '$password', '$type' , '$contact_number', '$location')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
+  	$_SESSION['email'] = $email;
+  	$_SESSION['type'] = $type;
+  	$_SESSION['contact_number'] = $contact_number;
+  	$_SESSION['location'] = $location;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: ../../index.php');
   }
@@ -81,7 +85,12 @@ if (isset($_POST['login_user'])) {
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
+      $row = mysqli_fetch_assoc($results);
       $_SESSION['username'] = $username;
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['type'] = $row['type'];
+      $_SESSION['contact_number'] = $row['contact_number'];
+      $_SESSION['location'] = $row['location'];
       $_SESSION['success'] = "You are now logged in";
       header('location: ../../index.php');
     }else {

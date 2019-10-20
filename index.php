@@ -55,9 +55,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Products</a>
                     </li>
+                    <?php if ($_SESSION['type']=='seller') { 
+                    echo '
                     <li class="nav-item">
                         <a class="nav-link" href="src/views/upload.php">Sell </a>
                     </li>
+                    ';
+                    }
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link" href="src/views/contact.php">Contact us</a>
                     </li>
