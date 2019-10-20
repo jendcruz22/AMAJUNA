@@ -1,5 +1,5 @@
 <?php 
-  session_start(); 
+  include('server.php');
 
   if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
@@ -80,11 +80,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
-                                <h3 class="login-heading mb-4" align="center">Upload product details here</h3>
-                                <form>
-                                    <form method="post" action="upload.php">
-                                    <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label></form>
-                                    </br>
+                                <h3 class="login-heading mb-4">Upload product details here</h3>
+                                <form method="post" action="upload.php">
+                                    <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label>
+                                    <br>
                                     <div class="form-label-group">
                                         <input name="title" type="text" id="prodName" class="form-control" placeholder="Product Name" required autofocus>
                                         <label for="prodName">Product Title<Title></Title></label>
@@ -118,9 +117,12 @@
                                     </div>
                                     <div id="form_input3" class="form-label-group">
                                     </div>
-                                    <button name="add_product" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">SELL</button>
+                                    <div class="form-label-group">
+                                        <button id="add_product_button" name="add_product" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">SELL</button>
+                                    </div>
+                                    </form>
                                     <div class="text-center">
-                                        <a class="small" href="index.php">Go Back to home page</a>
+                                        <a class="small" href="../../index.php">Go Back to home page</a>
                                     </div>
                                 </form>
                             </div>

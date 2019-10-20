@@ -1,4 +1,7 @@
+$("#add_product_button").css("display","none");
+
 function add_mobile_input(){
+    $("#add_product_button").css("display","block");
     $("#form_input1").html(`
         <div class="form-label-group">
             <input name="brand" type="text" id="prod_desc" class="form-control" placeholder="Product Description" required autofocus>
@@ -21,6 +24,7 @@ function add_mobile_input(){
 }
 
 function add_vehicles_input(){
+    $("#add_product_button").css("display","block");
     $("#form_input1").html(`
         <div class="form-label-group">
             <input name="brand" type="text" id="prod_desc" class="form-control" placeholder="Product Description" required autofocus>
