@@ -14,6 +14,12 @@ if (isset($_POST['reg_user'])) {
   // receive all input values from the form
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
+  $type = 'seller';
+  if (!($_POST['type']=='seller')){
+    $type = 'buyer';
+  }
+  $contact_number = mysqli_real_escape_string($db, $_POST['contact_number']);
+  $location = mysqli_real_escape_string($db, $_POST['location']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 

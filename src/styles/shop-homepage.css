@@ -1,6 +1,6 @@
 body {
     padding-top: 56px;
-    background-image: url("bg.jpg");
+    background-image: url("../../public/images/bg.jpg");
     background-repeat: no-repeat fixed;
     background-size: 100%;
     background-color: white

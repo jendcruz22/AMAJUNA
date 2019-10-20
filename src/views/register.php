@@ -15,11 +15,25 @@
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	  <input type="text" name="username" value="<?php echo $username;	 ?>">
   	</div>
   	<div class="input-group">
   	  <label>Email</label>
   	  <input type="email" name="email" value="<?php echo $email; ?>">
+	  </div>
+	<div class="input-group">
+		<div class="custom-control custom-switch">
+			<input style="width:40px;float:left;" type="checkbox" class="custom-control-input" id="customSwitch1" name="type" value="seller">
+			<label class="custom-control-label" for="customSwitch1">Are you a seller?</label>
+		</div>
+  	</div>
+	<div class="input-group">
+  	  <label>Contact number</label>
+  	  <input type="text" name="contact_number">
+  	</div>
+	<div class="input-group">
+  	  <label>Location</label>
+  	  <input type="text" name="location">
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
