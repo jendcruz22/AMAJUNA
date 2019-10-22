@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2019 at 07:10 PM
+-- Generation Time: Oct 22, 2019 at 04:22 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -32,9 +32,15 @@ CREATE TABLE `mobiles` (
   `p_id` int(11) NOT NULL,
   `screen_size` varchar(255) NOT NULL,
   `ram` varchar(255) NOT NULL,
-  `os` varchar(255) NOT NULL,
   `brand` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mobiles`
+--
+
+INSERT INTO `mobiles` (`p_id`, `screen_size`, `ram`, `brand`) VALUES
+(15, '6', '8', 'OnePlus');
 
 -- --------------------------------------------------------
 
@@ -49,8 +55,17 @@ CREATE TABLE `products` (
   `mrp` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `stock` int(11) NOT NULL,
+  `image_name` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `description`, `date_of_posting`, `mrp`, `title`, `stock`, `image_name`, `user_id`) VALUES
+(15, 'OnePlus 7 Pro smartphone runs on Android v9.0 (Pie) operating system. The phone is powered by Octa core processor. It has 6 GB RAM and 128 GB internal storage. OnePlus 7 Pro smartphone has a Fluid AMOLED display.', '2019-10-20 19:19:35', 20000, 'OnePlus', 1, 'oneplus.png', 15),
+(16, 'At Mercedes-Benz of Cary Purchasing a new vehicle is a big decision. One that should not be taken lightly. Many factors go into choosing the right vehicle.', '2019-10-20 19:21:28', 1000000, 'Mercedes', 2, 'mercedes.png', 15);
 
 -- --------------------------------------------------------
 
@@ -73,7 +88,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `type`, `contact_number`, `location`) VALUES
-(9, 'sanket', 'sanket@gmail.com', '81c6fa745434534c4a9633ad8c08506a', '', '', '');
+(15, 'sanket', 'sanket.dalvi.ssd@gmail.com', '81c6fa745434534c4a9633ad8c08506a', 'seller', '9619884244', 'Mumbai'),
+(17, 'jenny', 'jenny@gmail.com', '202cb962ac59075b964b07152d234b70', 'buyer', '987654321', 'IC');
 
 -- --------------------------------------------------------
 
@@ -83,10 +99,17 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `type`, `contac
 
 CREATE TABLE `vehicles` (
   `p_id` int(11) NOT NULL,
-  `type_of_vehicle` int(11) NOT NULL,
-  `seating_capacity` int(11) NOT NULL,
+  `type_of_vehicle` varchar(255) NOT NULL,
+  `seating_capacity` varchar(255) NOT NULL,
   `brand` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vehicles`
+--
+
+INSERT INTO `vehicles` (`p_id`, `type_of_vehicle`, `seating_capacity`, `brand`) VALUES
+(16, 'Sedan', '4 + 1', 'Mercedes');
 
 --
 -- Indexes for dumped tables
@@ -125,13 +148,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
