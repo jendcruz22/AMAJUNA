@@ -84,6 +84,7 @@
                                 <form method="post" action="upload.php">
                                     <input type="file" name="image" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label>
                                     <br>
+                                    <br>
                                     <div class="form-label-group">
                                         <input name="title" type="text" id="prodName" class="form-control" placeholder="Product Name" required autofocus>
                                         <label for="prodName">Product Title<Title></Title></label>

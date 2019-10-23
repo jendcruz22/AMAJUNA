@@ -86,6 +86,7 @@ if (isset($_POST['login_user'])) {
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
       $row = mysqli_fetch_assoc($results);
+      $_SESSION['user_id'] = $row['user_id'];
       $_SESSION['username'] = $username;
       $_SESSION['email'] = $row['email'];
       $_SESSION['type'] = $row['type'];

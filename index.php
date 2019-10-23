@@ -37,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">AMAJUNA</a>
+            <a class="navbar-brand" href="index.php">AMAJUNA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,8 +85,8 @@
 
                 <h1 class="my-3">Categories</h1>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Mobiles</a>
-                    <a href="#" class="list-group-item">Vehicles</a>
+                    <a href="index.php?category=mobiles" class="list-group-item">Mobiles</a>
+                    <a href="index.php?category=vehicles" class="list-group-item">Vehicles</a>
                 </div>
 
             </div>
@@ -123,85 +123,94 @@
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="public/images/onep7.jpg" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="src/views/prodoneplus.html">One Plus 7 Pro</a>
-                                </h4>
-                                <h5>Rs 48,999</h5>
-                                <p class="card-text">
-                                    OnePlus 7 Pro smartphone runs on Android v9.0 (Pie) operating system. The phone is powered by Octa core processor. It has 6 GB RAM and 128 GB internal storage. OnePlus 7 Pro smartphone has a Fluid AMOLED display.
-                                </p>
+                <?php
+                if(isset($_GET['category'])){
+                    if($_GET['category']=='mobiles'){
+                    $select_mobiles = 'SELECT p.*,m.* FROM products p, mobiles m WHERE p.product_id = m.p_id';
+                    $result = mysqli_query($db,$select_mobiles);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                    </h4>
+                                    <h5>₹ '.$row['mrp'].'</h5>
+                                    <p class="card-text">'.$row['description'].'</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        ';
+                    }
+                }
+                elseif($_GET['category']=='vehicles'){
+                    $select_vehicles = 'SELECT * FROM products p, vehicles v WHERE p.product_id = v.p_id';
+                    $result = mysqli_query($db,$select_vehicles);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                    </h4>
+                                    <h5>₹ '.$row['mrp'].'</h5>
+                                    <p class="card-text">'.$row['description'].'</p>
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                    }
+                }
+                elseif($_GET['category']=='vehicles'){
+                    $select_my_products = 'SELECT * FROM products WHERE user_id = '.$_SESSION;
+                    $result = mysqli_query($db,$select_my_products);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                    </h4>
+                                    <h5>₹ '.$row['mrp'].'</h5>
+                                    <p class="card-text">'.$row['description'].'</p>
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                    }
+                }
+            }
+                else{
+                    $select_all_products = 'SELECT * FROM products';
+                    $result = mysqli_query($db,$select_all_products);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                    </h4>
+                                    <h5>₹ '.$row['mrp'].'</h5>
+                                    <p class="card-text">'.$row['description'].'</p>
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                    }
+                }
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="public/images/rep.jpg" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Royal Enfield Bullet 500</a>
-                                </h4>
-                                <h5>Rs 2,32,316.00</h5>
-                                <p class="card-text">The Bullet 500 is the same as the iconic Bullet 350, but with a bigger 499cc engine. The Bullet 500 is powered by a single-cylinder air-cooled 499cc mill producing 26.5bhp of power at 5,100rpm and 40.9Nm of torque at 3,800rpm.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="public/images/jag.jpg" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Jaguar I-PACE</a>
-                                </h4>
-                                <h5>Rs 58.00 Lakh</h5>
-                                <p class="card-text">The Jaguar I-Pace has a WLTP-rated range of 292 miles (470 km) and an EPA-rated range of 234 miles (377 km). The car has a wade depth of 500 mm (20 in).</p>
-                            </div>
-                        </div>
-                    </div>
+                ?>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="public/images/iphoneprod.jpg" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Iphone 6</a>
-                                </h4>
-                                <h5>Rs 27,000</h5>
-                                <p class="card-text">The iPhone 6 and 6 Plus include larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Five</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Item Six</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                 </div>
                 <!-- /.row -->
