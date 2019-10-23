@@ -33,41 +33,7 @@
 </head>
 
 <body>
-<?php
-    $get_product = 'SELECT * FROM products, users WHERE products.user_id = users.user_id and products.product_id = '.intval($_GET['product_id']);
-    $result = mysqli_query($db,$get_product);
-    while($row = mysqli_fetch_assoc($result)){
-        // var_dump($);
-        echo '
-        
-        <div class="col-lg-9">
 
-        <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="../../public/images/'.$row['image_name'].'" alt="">
-            <div class="card-body">
-                <h3 class="card-title">One Plus Pro</h3>
-                <h4>Rs '.$row['mrp'].'</h4>
-                <p class="card-text">
-                    <b>Technical Details</b><pre>
-'.$row['description'].'</pre>
-                    
-            </div>
-            </br>
-            <h5>  Owners information</h5>
-            <p class="card-text"><b>  Jenny Dcruz</b>
-                <pre>
-Phone number: 9737273348
-Address: IC Colony, Mumbai 400 103
-            </pre>
-        </div>
-       </br>
-
-    </div>
-        ';
-    
-    }
-
-?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -116,54 +82,42 @@ Address: IC Colony, Mumbai 400 103
             </div>
             <!-- /.col-lg-3 -->
 
-            <div class="col-lg-9">
+            <?php
+    $get_product = 'SELECT * FROM products, users WHERE products.user_id = users.user_id and products.product_id = '.intval($_GET['product_id']);
+    $result = mysqli_query($db,$get_product);
+    while($row = mysqli_fetch_assoc($result)){
+        echo '
+        
+        <div class="col-lg-9">
 
-                <div class="card mt-4">
-                    <img class="card-img-top img-fluid" src="../../public/images/onep7prod.jpg" alt="">
-                    <div class="card-body">
-                        <h3 class="card-title">One Plus Pro</h3>
-                        <h4>Rs 48,999</h4>
-                        <p class="card-text">
-                            <b>Technical Details</b><pre>
-OS	Android 9 Pie OxygenOS
-RAM	6 GB
-Item Weight	204 g
-Product Dimensions	16.3 x 0.9 x 7.6 cm
-Batteries:	1 Lithium ion batteries required. (included)
-Item model number	GM1911
-Wireless communication technologies	Bluetooth;
-WiFi Hotspot
-Special features:   Dual Sim, 
-                    Front Camera, 
-                    Touchscreen, 
-                    USB, 
-                    In-display Fingerprint sensor, 
-                    Accelerometer, 
-                    Electronic compass, 
-                    Gyroscope,  
-                    Ambient light sensor,   
-                    Proximity sensor, 
-                    Sensor core, 
-                    Laser sensor
-Display technology:	pixel density of 515 PPI and Aspect Ratio 19.5:9
-Form factor	Touchscreen Phone
-Weight	204 Grams
-Colour	Mirror Grey
-Battery Power Rating	4000
-                                                </pre>
-                            
-                    </div>
-                    </br>
-                    <h5>  Owners information</h5>
-                    <p class="card-text"><b>  Jenny Dcruz</b>
-                        <pre>
- Phone number: 9737273348
- Address: IC Colony, Mumbai 400 103
-                    </pre>
-                </div>
-               </br>
-
+        <div class="card mt-4">
+            <img class="card-img-top img-fluid" src="../../public/images/'.$row['image_name'].'" alt="">
+            <div class="card-body">
+                <h3 class="card-title">One Plus Pro</h3>
+                <h4>Rs '.$row['mrp'].'</h4>
+                <p class="card-text">
+                    <b>Technical Details</b><p>
+'.$row['description'].'</p>
+                    
             </div>
+            </br>
+            <h5>  Owners information</h5>
+            <p class="card-text"><b>Username: '.$row['username'].'</b>
+                <pre>
+Phone number: '.$row['contact_number'].'
+Address: '.$row['location'].'
+            </pre>
+        </div>
+       </br>
+
+    </div>
+        ';
+    
+    }
+
+?>
+
+
             <!-- /.col-lg-9 -->
 
         </div>
