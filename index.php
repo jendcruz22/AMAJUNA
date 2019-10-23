@@ -155,7 +155,7 @@
                                 <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
-                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                        <a href="src/views/productpage.php?product_id='.$row['product_id'].'">'.$row['title'].'</a>
                                     </h4>
                                     <h5>₹ '.$row['mrp'].'</h5>
                                     <p class="card-text">'.$row['description'].'</p>
@@ -175,7 +175,7 @@
                                 <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
-                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                        <a href="src/views/productpage.php?product_id='.$row['product_id'].'">'.$row['title'].'</a>
                                     </h4>
                                     <h5>₹ '.$row['mrp'].'</h5>
                                     <p class="card-text">'.$row['description'].'</p>
@@ -196,7 +196,7 @@
                                 <a href="#"><img class="card-img-top" src="public/images/'.$row['image_name'].'" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
-                                        <a href="src/views/prodoneplus.html">'.$row['title'].'</a>
+                                        <a href="src/views/productpage.php?product_id='.$row['product_id'].'">'.$row['title'].'</a>
                                     </h4>
                                     <h5>₹ '.$row['mrp'].'</h5>
                                     <p class="card-text">'.$row['description'].'</p>

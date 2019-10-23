@@ -1,4 +1,17 @@
-﻿<!DOCTYPE html>
+﻿<?php
+  session_start(); 
+  $db = mysqli_connect('localhost', 'root', '', 'amajuna');
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: src/views/login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header('location: src/views/login.php');
+  }
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,6 +33,41 @@
 </head>
 
 <body>
+<?php
+    $get_product = 'SELECT * FROM products, users WHERE products.user_id = users.user_id and products.product_id = '.intval($_GET['product_id']);
+    $result = mysqli_query($db,$get_product);
+    while($row = mysqli_fetch_assoc($result)){
+        // var_dump($);
+        echo '
+        
+        <div class="col-lg-9">
+
+        <div class="card mt-4">
+            <img class="card-img-top img-fluid" src="../../public/images/'.$row['image_name'].'" alt="">
+            <div class="card-body">
+                <h3 class="card-title">One Plus Pro</h3>
+                <h4>Rs '.$row['mrp'].'</h4>
+                <p class="card-text">
+                    <b>Technical Details</b><pre>
+'.$row['description'].'</pre>
+                    
+            </div>
+            </br>
+            <h5>  Owners information</h5>
+            <p class="card-text"><b>  Jenny Dcruz</b>
+                <pre>
+Phone number: 9737273348
+Address: IC Colony, Mumbai 400 103
+            </pre>
+        </div>
+       </br>
+
+    </div>
+        ';
+    
+    }
+
+?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -64,11 +112,7 @@
         <div class="row">
 
             <div class="col-lg-3">
-                <h1 class="my-4">Categories</h1>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Mobiles</a>
-                    <a href="#" class="list-group-item">Vehicles</a>
-                </div>
+                <h1 class="my-4">Product Details</h1>
             </div>
             <!-- /.col-lg-3 -->
 
@@ -107,8 +151,7 @@ Weight	204 Grams
 Colour	Mirror Grey
 Battery Power Rating	4000
                                                 </pre>
-                            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                            4.0 stars
+                            
                     </div>
                     </br>
                     <h5>  Owners information</h5>
