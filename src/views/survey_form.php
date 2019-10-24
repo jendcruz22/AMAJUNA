@@ -11,6 +11,44 @@
     <title>Survey form for Amajuna</title>
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.php">AMAJUNA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.php">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Products</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="upload.php">
+                            Sell now
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/views/survey_form.php">Survey form</a>
+                    </li>
+                    <li class="nav-item">
+                      <?php  if (isset($_SESSION['username'])) : ?>
+                        <p> <a class="nav-link" href="../../index.php?logout='1'" style="color: #777">Logout</a> </p>
+                      <?php endif ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <h1>Survey Form for Amajuna</h1>
     <div class="container">
     <form>

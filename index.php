@@ -68,6 +68,9 @@
                         <a class="nav-link" href="src/views/contact.php">Contact us</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="src/views/survey_form.php">Survey form</a>
+                    </li>
+                    <li class="nav-item">
                       <?php  if (isset($_SESSION['username'])) : ?>
                         <p> <a class="nav-link" href="index.php?logout='1'" style="color: #777">Logout</a> </p>
                       <?php endif ?>
