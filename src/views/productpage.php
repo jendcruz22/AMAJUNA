@@ -98,6 +98,7 @@
                 <p class="card-text">
                     <b>Technical Details</b><p>
 '.$row['description'].'</p>
+                
                     
             </div>
             </br>
