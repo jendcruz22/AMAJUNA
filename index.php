@@ -52,11 +52,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="src/views/About.php">About us</a>
                     </li>
+                    
+                    <?php if ($_SESSION['type']=='seller') { 
+                    echo '
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?category=my_products">My Products</a>
                     </li>
-                    <?php if ($_SESSION['type']=='seller') { 
-                    echo '
                     <li class="nav-item">
                         <a class="nav-link" href="src/views/upload.php">Sell </a>
                     </li>
