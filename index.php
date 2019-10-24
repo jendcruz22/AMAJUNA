@@ -53,7 +53,7 @@
                         <a class="nav-link" href="src/views/About.php">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My Products</a>
+                        <a class="nav-link" href="index.php?category=my_products">My Products</a>
                     </li>
                     <?php if ($_SESSION['type']=='seller') { 
                     echo '
@@ -165,8 +165,8 @@
                         ';
                     }
                 }
-                elseif($_GET['category']=='vehicles'){
-                    $select_my_products = 'SELECT * FROM products WHERE user_id = '.$_SESSION;
+                elseif($_GET['category']=='my_products'){
+                    $select_my_products = 'SELECT * FROM products, users WHERE products.user_id = users.user_id and users.username = "'.$_SESSION['username'].'"';
                     $result = mysqli_query($db,$select_my_products);
                     while($row = mysqli_fetch_assoc($result)){
                         echo '
