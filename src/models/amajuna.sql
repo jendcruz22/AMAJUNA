@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2019 at 04:22 PM
+-- Generation Time: Oct 24, 2019 at 02:01 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -40,7 +40,9 @@ CREATE TABLE `mobiles` (
 --
 
 INSERT INTO `mobiles` (`p_id`, `screen_size`, `ram`, `brand`) VALUES
-(15, '6', '8', 'OnePlus');
+(15, '6', '8', 'OnePlus'),
+(17, '6', '8', 'OnePlus'),
+(20, '4.4', '2', 'iPhone');
 
 -- --------------------------------------------------------
 
@@ -64,8 +66,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `description`, `date_of_posting`, `mrp`, `title`, `stock`, `image_name`, `user_id`) VALUES
-(15, 'OnePlus 7 Pro smartphone runs on Android v9.0 (Pie) operating system. The phone is powered by Octa core processor. It has 6 GB RAM and 128 GB internal storage. OnePlus 7 Pro smartphone has a Fluid AMOLED display.', '2019-10-20 19:19:35', 20000, 'OnePlus', 1, 'oneplus.png', 15),
-(16, 'At Mercedes-Benz of Cary Purchasing a new vehicle is a big decision. One that should not be taken lightly. Many factors go into choosing the right vehicle.', '2019-10-20 19:21:28', 1000000, 'Mercedes', 2, 'mercedes.png', 15);
+(15, 'OnePlus 7T smartphone runs on Android 10 operating system. The phone is powered by Octa core processor. It has 8 GB RAM and 256 GB internal storage. OnePlus 7T smartphone has a 90 Hz LCD Panel display.', '2019-10-20 19:19:35', 20000, 'OnePlus 7T', 1, 'oneplus.png', 15),
+(16, 'At Mercedes-Benz of Cary Purchasing a new vehicle is a big decision. One that should not be taken lightly. Many factors go into choosing the right vehicle.', '2019-10-20 19:21:28', 1000000, 'Mercedes Benz S Class', 2, 'mercedes.png', 15),
+(17, 'OnePlus 7 Pro smartphone runs on Android v9.0 (Pie) operating system. The phone is powered by Octa core processor. It has 6 GB RAM and 128 GB internal storage. OnePlus 7 Pro smartphone has a Fluid AMOLED display.', '2019-10-23 18:31:33', 12000, 'OnePlus 7 Pro', 1, 'onep7.jpg', 15),
+(18, 'The Bullet 500 is the same as the iconic Bullet 350, but with a bigger 499cc engine. The Bullet 500 is powered by a single-cylinder air-cooled 499cc mill producing 26.5bhp of power at 5,100rpm and 40.9Nm of torque at 3,800rpm.', '2019-10-23 18:38:00', 110000, 'Royal Enfield Bullet 500', 2, 'rep.jpg', 15),
+(19, 'The Jaguar I-Pace has a WLTP-rated range of 292 miles (470 km) and an EPA-rated range of 234 miles (377 km). The car has a wade depth of 500 mm (20 in).', '2019-10-23 18:39:13', 3000000, 'Jaguar I-PACE', 1, 'jag.jpg', 15),
+(20, 'The iPhone 6 and 6 Plus include larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering.', '2019-10-23 18:52:37', 15000, 'iPhone 6', 3, 'iphoneprod.jpg', 15);
 
 -- --------------------------------------------------------
 
@@ -109,7 +115,9 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`p_id`, `type_of_vehicle`, `seating_capacity`, `brand`) VALUES
-(16, 'Sedan', '4 + 1', 'Mercedes');
+(16, 'Sedan', '4 + 1', 'Mercedes'),
+(18, 'Bullet', '2', 'Royal Enfield'),
+(19, 'Sedan', '4 + 1', 'Jaguar');
 
 --
 -- Indexes for dumped tables
@@ -148,7 +156,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
