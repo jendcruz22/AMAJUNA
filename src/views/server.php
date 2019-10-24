@@ -145,5 +145,35 @@ if (isset($_POST['add_product'])) {
 
 }
 
+if (isset($_POST['survey'])) {
+  $impression = mysqli_real_escape_string($db, $_POST['impression$impression']);
+  $reference = mysqli_real_escape_string($db, $_POST['reference']);
+  $missing = mysqli_real_escape_string($db, $_POST['missing']);
+  $recommendation = mysqli_real_escape_string($db, $_POST['recommendation']);
+
+
+  if (!(empty($username)||empty($reference)||empty($missing)||empty($recommendation))) 
+    {
+
+
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $results = mysqli_query($db, $query);
+    if (mysqli_num_rows($results) == 1) {
+      $row = mysqli_fetch_assoc($results);
+      $_SESSION['user_id'] = $row['user_id'];
+      $_SESSION['username'] = $username;
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['type'] = $row['type'];
+      $_SESSION['contact_number'] = $row['contact_number'];
+      $_SESSION['location'] = $row['location'];
+      $_SESSION['success'] = "You are now logged in";
+      header('location: ../../index.php');
+    }else {
+      array_push($errors, "Wrong username/password combination");
+    }
+  }
+
+}
+
 
 ?>

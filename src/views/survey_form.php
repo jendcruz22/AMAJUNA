@@ -1,3 +1,17 @@
+<?php 
+  include('server.php');
+
+  if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: login.php');
+  }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,26 +63,29 @@
             </div>
         </div>
     </nav>
-    <h1>Survey Form for Amajuna</h1>
+    <br>
+    <br>
+    <br>
     <div class="container">
+    <h1>Survey Form for Amajuna</h1>
     <form>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
+        <label for="exampleInputEmail1">What was your first impression when you entered the website?</label>
+        <input name="impression" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
+        <label for="exampleInputEmail1">How did you first hear about us?</label>
+        <input name="reference" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
+        <label for="exampleInputEmail1">Is there anything missing on this page?</label>
+        <input name="missing" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
+        <label for="exampleInputEmail1">How likely will you recommend it to friends?</label>
+        <input name="recommendation" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" name="survey" class="btn btn-primary">Submit</button>
     </form>
     </div>
 
