@@ -68,7 +68,15 @@
     <br>
     <div class="container">
     <h1>Survey Form for Amajuna</h1>
-    <form>
+    <form method="post" action="survey_form.php">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email id</label>
+        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email id">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Contact number</label>
+        <input name="contact_number" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your contact number">
+    </div>
     <div class="form-group">
         <label for="exampleInputEmail1">What was your first impression when you entered the website?</label>
         <input name="impression" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your feedback">
