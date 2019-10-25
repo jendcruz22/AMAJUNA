@@ -29,7 +29,7 @@ if (isset($_POST['reg_user'])) {
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
-	array_push($errors, "The two passwords do not match");
+  array_push($errors, "The two passwords do not match");
   }
 
   // first check the database to make sure 
@@ -50,18 +50,18 @@ if (isset($_POST['reg_user'])) {
 
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
-  	$password = md5($password_1);//encrypt the password before saving in the database
+    $password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, type, contact_number, location) 
-  			  VALUES('$username', '$email', '$password', '$type' , '$contact_number', '$location')";
-  	mysqli_query($db, $query);
-  	$_SESSION['username'] = $username;
-  	$_SESSION['email'] = $email;
-  	$_SESSION['type'] = $type;
-  	$_SESSION['contact_number'] = $contact_number;
-  	$_SESSION['location'] = $location;
-  	$_SESSION['success'] = "You are now logged in";
-  	header('location: ../../index.php');
+    $query = "INSERT INTO users (username, email, password, type, contact_number, location) 
+          VALUES('$username', '$email', '$password', '$type' , '$contact_number', '$location')";
+    mysqli_query($db, $query);
+    $_SESSION['username'] = $username;
+    $_SESSION['email'] = $email;
+    $_SESSION['type'] = $type;
+    $_SESSION['contact_number'] = $contact_number;
+    $_SESSION['location'] = $location;
+    $_SESSION['success'] = "You are now logged in";
+    header('location: ../../index.php');
   }
 }
 
@@ -146,34 +146,24 @@ if (isset($_POST['add_product'])) {
 }
 
 if (isset($_POST['survey'])) {
-  $impression = mysqli_real_escape_string($db, $_POST['impression$impression']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $contact_number = mysqli_real_escape_string($db, $_POST['contact_number']);
+  $impression = mysqli_real_escape_string($db, $_POST['impression']);
   $reference = mysqli_real_escape_string($db, $_POST['reference']);
   $missing = mysqli_real_escape_string($db, $_POST['missing']);
   $recommendation = mysqli_real_escape_string($db, $_POST['recommendation']);
-
-
-  if (!(empty($username)||empty($reference)||empty($missing)||empty($recommendation))) 
+  
+  if (!(empty($email)&&empty($contact_number)&&empty($reference)&&empty($missing)&&empty($recommendation))) 
     {
 
+    $query = "INSERT INTO `feedback`(`email`, `contact_number`, `impression`, `reference`, `missing`, `recommendation`) VALUES ('$email','$contact_number','$impression','$reference','$missing','$recommendation')";
 
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $results = mysqli_query($db, $query);
-    if (mysqli_num_rows($results) == 1) {
-      $row = mysqli_fetch_assoc($results);
-      $_SESSION['user_id'] = $row['user_id'];
-      $_SESSION['username'] = $username;
-      $_SESSION['email'] = $row['email'];
-      $_SESSION['type'] = $row['type'];
-      $_SESSION['contact_number'] = $row['contact_number'];
-      $_SESSION['location'] = $row['location'];
-      $_SESSION['success'] = "You are now logged in";
+    if (mysqli_query($db, $query)) {
       header('location: ../../index.php');
-    }else {
-      array_push($errors, "Wrong username/password combination");
     }
   }
 
-}
 
+}
 
 ?>
